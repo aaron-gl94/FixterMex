@@ -1,0 +1,16 @@
+
+<h2>Detalle del cine: {{cine.name}}</h2>
+
+<h3>Aqui va la data del cine</h3>
+<hr>
+<h4>Peliculas y horarios en el cine:</h4>
+{%for movie in movies%}
+	<h4>{{movie.title}}</h4>
+	{%for h in movie.shows.all%}
+		<span>{{h}} - </span>
+		{%empty%}
+			<h3>No hay horarios</h3>
+	{%endfor%}
+	{%empty%}
+		<h2>No hay Peliculas proyectandose aqui</h2>
+{%endfor%}

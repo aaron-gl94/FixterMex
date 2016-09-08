@@ -1,0 +1,16 @@
+<a href="{%url 'cines'%}">
+<h1>Ver por cines</h1>
+</a>
+<ul>
+	{%for movie in movies%}
+	<li>
+		<a href="{%url 'detail_movie' movie.id%}">
+		<p>{{movie.title}}</p>
+		</a>
+		<img src="{{movie.poster.url}}">
+		<p>{{movie.desc}}</p>
+	</li>
+	{%empty%}
+	<h2>No tenemos Suicide Squad!</h2>
+	{%endfor%}
+</ul>

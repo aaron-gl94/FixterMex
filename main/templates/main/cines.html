@@ -1,0 +1,7 @@
+<h2>Cines</h2>
+
+{%for cine in cines%}
+	<a href="{%url 'detail_cine' cine.id%}"><h3>{{cine.name}}</h3></a>
+{%empty%}
+<h3>No hay cines</h3>
+{%endfor%}

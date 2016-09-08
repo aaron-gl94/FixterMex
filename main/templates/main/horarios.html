@@ -1,0 +1,8 @@
+<h3>Horarios</h3>
+
+{%for horario in horarios%}
+	<a href="{% url 'detail_time' horario.id%}">{{horario.schedule}}</a>
+	{%empty%}
+	<h2>No hay cines</h2>
+{%endfor%}
+<hr>

@@ -1,0 +1,16 @@
+<img style="width:200px" src="{{movie.poster.url}}">
+<h2>{{movie.title}}</h2>
+<p>{{movie.desc}}</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/{{movie.trailer}}?autoplay=1" frameborder="0" allowfullscreen></iframe>
+
+<h3>Horarios</h3>
+{%for c in cines%}
+	<h3>{{c.name}}</h3>
+	{% for s in c.shows.all %}
+		<span>{{s}}</span>
+		{%empty%}
+		<h2>No hay horarios</h2>
+	{% endfor %}
+	{%empty%}
+	<h2>No hay cines</h2>
+{%endfor%}
